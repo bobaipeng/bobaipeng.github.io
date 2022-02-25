@@ -137,6 +137,13 @@
 
   
   <url>
+    <loc>https://bobaipeng.gitee.io/tags/github/</loc>
+    <lastmod>2022-02-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://bobaipeng.gitee.io/tags/hexo/</loc>
     <lastmod>2022-02-25</lastmod>
     <changefreq>daily</changefreq>
@@ -145,13 +152,6 @@
   
   <url>
     <loc>https://bobaipeng.gitee.io/tags/Hexo-Theme-LiveMyLife/</loc>
-    <lastmod>2022-02-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://bobaipeng.gitee.io/tags/github/</loc>
     <lastmod>2022-02-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -174,6 +174,13 @@
 
   
   <url>
+    <loc>https://bobaipeng.gitee.io/categories/git/</loc>
+    <lastmod>2022-02-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://bobaipeng.gitee.io/categories/hexo/</loc>
     <lastmod>2022-02-25</lastmod>
     <changefreq>daily</changefreq>
@@ -182,13 +189,6 @@
   
   <url>
     <loc>https://bobaipeng.gitee.io/categories/Hexo-Theme-LiveMyLife/</loc>
-    <lastmod>2022-02-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://bobaipeng.gitee.io/categories/git/</loc>
     <lastmod>2022-02-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
