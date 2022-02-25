@@ -245,23 +245,12 @@
 
           
           
-          <li>
-            <a href="/tags/">
-              
-              标签
-              
-              
-            </a>
-          </li>
-          
-          
-          
           
           
           <li>
-            <a href="/about/">
+            <a href="/archive/">
               
-              关于
+              归档
               
               
             </a>
@@ -281,9 +270,20 @@
           
           
           <li>
-            <a href="/archive/">
+            <a href="/about/">
               
-              归档
+              关于
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              标签
               
               
             </a>
@@ -410,7 +410,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">92</span> In Total
+              Words <span class="post-count">93</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -472,10 +472,12 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h3 id="1-安装插件"><a href="#1-安装插件" class="headerlink" title="1.安装插件"></a>1.安装插件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-index --save</span><br></pre></td></tr></table></figure>
+        <h3 id="1-安装插件">1.安装插件</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-index --save</span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-archive --save</span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-tag --save</span><br></pre></td></tr></table></figure>
-<h3 id="2-config-yaml里面配置"><a href="#2-config-yaml里面配置" class="headerlink" title="2.config.yaml里面配置"></a>2.config.yaml里面配置</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Algolia Search</span></span><br><span class="line"><span class="comment"># For more information: https://www.algolia.com</span></span><br><span class="line"><span class="attr">algolia_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">hits:</span></span><br><span class="line">    <span class="attr">per_page:</span> <span class="number">5</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#主页每页显示文章数</span></span><br><span class="line"><span class="attr">index_generator:</span></span><br><span class="line">    <span class="attr">per_page:</span> <span class="number">5</span></span><br><span class="line"><span class="comment">#archive分页每页显示文章数</span></span><br><span class="line"><span class="attr">archive_generator:</span></span><br><span class="line">    <span class="attr">per_page:</span> <span class="number">5</span></span><br><span class="line"><span class="comment">#tag分页每页显示文章数</span></span><br><span class="line"><span class="attr">tag_generator:</span></span><br><span class="line">    <span class="attr">per_page:</span> <span class="number">10</span></span><br><span class="line"><span class="comment">#category分页每页显示文章数</span></span><br><span class="line"><span class="attr">category_generator:</span> </span><br><span class="line">    <span class="attr">per_page:</span> <span class="number">10</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="2-config-yaml里面配置">2.config.yaml里面配置</h3>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Algolia Search</span></span><br><span class="line"><span class="comment"># For more information: https://www.algolia.com</span></span><br><span class="line"><span class="attr">algolia_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">hits:</span></span><br><span class="line">    <span class="attr">per_page:</span> <span class="number">5</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#主页每页显示文章数</span></span><br><span class="line"><span class="attr">index_generator:</span></span><br><span class="line">    <span class="attr">per_page:</span> <span class="number">5</span></span><br><span class="line"><span class="comment">#archive分页每页显示文章数</span></span><br><span class="line"><span class="attr">archive_generator:</span></span><br><span class="line">    <span class="attr">per_page:</span> <span class="number">5</span></span><br><span class="line"><span class="comment">#tag分页每页显示文章数</span></span><br><span class="line"><span class="attr">tag_generator:</span></span><br><span class="line">    <span class="attr">per_page:</span> <span class="number">10</span></span><br><span class="line"><span class="comment">#category分页每页显示文章数</span></span><br><span class="line"><span class="attr">category_generator:</span> </span><br><span class="line">    <span class="attr">per_page:</span> <span class="number">10</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
         <hr>
@@ -575,7 +577,7 @@
       distractionFreeMode: false, // Facebook-like distraction free mode
       perPage: 10,
       pagerDirection: 'last',
-      createIssueManually: false,
+      createIssueManually: true,
       language: 'zh-CN',
       proxy: 'https://misty-tooth-5aea.524027223.workers.dev/https://github.com/login/oauth/access_token'
     });

@@ -245,23 +245,12 @@
 
           
           
-          <li>
-            <a href="/tags/">
-              
-              标签
-              
-              
-            </a>
-          </li>
-          
-          
-          
           
           
           <li>
-            <a href="/about/">
+            <a href="/archive/">
               
-              关于
+              归档
               
               
             </a>
@@ -281,9 +270,20 @@
           
           
           <li>
-            <a href="/archive/">
+            <a href="/about/">
               
-              归档
+              关于
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              标签
               
               
             </a>
@@ -472,33 +472,47 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h3 id="1-导入的目的是什么？"><a href="#1-导入的目的是什么？" class="headerlink" title="1. 导入的目的是什么？"></a>1. 导入的目的是什么？</h3><p>将Python的一些功能函数导入到当前的脚本中使用，很多函数不能导入是不能使用的，除了内置函数如print()</p>
+        <h3 id="1-导入的目的是什么？">1. 导入的目的是什么？</h3>
+<p>将Python的一些功能函数导入到当前的脚本中使用，很多函数不能导入是不能使用的，除了内置函数如print()</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">sys.path</span><br><span class="line"><span class="built_in">print</span>(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-<h3 id="2-导入的位置一般在什么地方？为什么？"><a href="#2-导入的位置一般在什么地方？为什么？" class="headerlink" title="2. 导入的位置一般在什么地方？为什么？"></a>2. 导入的位置一般在什么地方？为什么？</h3><p>导入的位置一般在头注释下面，因为程序是自顶向下进行执行的，头注释之后就可以进行导入了，然后进行函数调用</p>
-<h3 id="3-模块与包"><a href="#3-模块与包" class="headerlink" title="3. 模块与包"></a>3. 模块与包</h3><h4 id="3-1-在导入的时候导入的就是模块与包，那么我们该如何理解模块和包呢"><a href="#3-1-在导入的时候导入的就是模块与包，那么我们该如何理解模块和包呢" class="headerlink" title="3.1 在导入的时候导入的就是模块与包，那么我们该如何理解模块和包呢"></a>3.1 在导入的时候导入的就是模块与包，那么我们该如何理解模块和包呢</h4><p><strong>模块：</strong> 任何 的 <code>*.py</code>  文件都可以当作模块 用 <code>import</code> 导入,即每个<code>*.py</code>  文件都可看作是一个模块</p>
+<h3 id="2-导入的位置一般在什么地方？为什么？">2. 导入的位置一般在什么地方？为什么？</h3>
+<p>导入的位置一般在头注释下面，因为程序是自顶向下进行执行的，头注释之后就可以进行导入了，然后进行函数调用</p>
+<h3 id="3-模块与包">3. 模块与包</h3>
+<h4 id="3-1-在导入的时候导入的就是模块与包，那么我们该如何理解模块和包呢">3.1 在导入的时候导入的就是模块与包，那么我们该如何理解模块和包呢</h4>
+<p><strong>模块：</strong> 任何 的 <code>*.py</code>  文件都可以当作模块 用 <code>import</code> 导入,即每个<code>*.py</code>  文件都可看作是一个模块</p>
 <p><strong>包：</strong>  包含一个<code>__init__.py</code>文件和其他模块文件、以及子目录及文件，</p>
-<p> <strong>$\textcolor{red}{注意:} $</strong>    ==其中<code>__init__.py</code>可以没有，模块文件里的属性、函数、类只有用模块才能调用出来，所以导入模块一般情况下是必须的==</p>
+<p><strong>$\textcolor{red}{注意:} $</strong>    ==其中<code>__init__.py</code>可以没有，模块文件里的属性、函数、类只有用模块才能调用出来，所以导入模块一般情况下是必须的==</p>
 <p><img src="https://cdn.jsdelivr.net/gh/bobaipeng/image/typora/image-20220208171402092.png" alt=""></p>
 <p>上图中<code>bobtest、bobtest1、package_1、package_2</code>都是包，<code>sub_class_1.py、sub_class_2.py、bob_module.py</code>等都是模块</p>
-<h4 id="3-2导入包"><a href="#3-2导入包" class="headerlink" title="3.2导入包"></a>3.2导入包</h4><h6 id="bobtest、bobtest1-包分开导入"><a href="#bobtest、bobtest1-包分开导入" class="headerlink" title="bobtest、bobtest1 包分开导入"></a>bobtest、bobtest1 包分开导入</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> bobtest</span><br><span class="line"><span class="keyword">import</span> bobtest1</span><br></pre></td></tr></table></figure>
-<h6 id="bobtest、bobtest1包-分开导入一起导入"><a href="#bobtest、bobtest1包-分开导入一起导入" class="headerlink" title="bobtest、bobtest1包 分开导入一起导入"></a>bobtest、bobtest1包 分开导入一起导入</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> bobtest,bobtest1</span><br></pre></td></tr></table></figure>
-<h6 id="package-1包导入"><a href="#package-1包导入" class="headerlink" title="package_1包导入"></a>package_1包导入</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#方式1.链式调用 完全导入</span></span><br><span class="line"><span class="keyword">import</span> bobtest.package_1</span><br><span class="line"></span><br><span class="line"><span class="comment">#方式2.from ...import ...调用 部分导入</span></span><br><span class="line"><span class="keyword">from</span> bobtest <span class="keyword">import</span> package_1</span><br></pre></td></tr></table></figure>
-<h4 id="3-3-导入模块"><a href="#3-3-导入模块" class="headerlink" title="3.3 导入模块"></a>3.3 导入模块</h4><p>导入模块的时候使用import 和from…import…</p>
+<h4 id="3-2导入包">3.2导入包</h4>
+<h6 id="bobtest、bobtest1-包分开导入">bobtest、bobtest1 包分开导入</h6>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> bobtest</span><br><span class="line"><span class="keyword">import</span> bobtest1</span><br></pre></td></tr></table></figure>
+<h6 id="bobtest、bobtest1包-分开导入一起导入">bobtest、bobtest1包 分开导入一起导入</h6>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> bobtest,bobtest1</span><br></pre></td></tr></table></figure>
+<h6 id="package-1包导入">package_1包导入</h6>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#方式1.链式调用 完全导入</span></span><br><span class="line"><span class="keyword">import</span> bobtest.package_1</span><br><span class="line"></span><br><span class="line"><span class="comment">#方式2.from ...import ...调用 部分导入</span></span><br><span class="line"><span class="keyword">from</span> bobtest <span class="keyword">import</span> package_1</span><br></pre></td></tr></table></figure>
+<h4 id="3-3-导入模块">3.3 导入模块</h4>
+<p>导入模块的时候使用import 和from…import…</p>
 <p><code>from ...import *</code>可以导入包下所有模块，但是占用系统损耗太大，一般不用，只精确导入自己需要的模块等</p>
 <p><img src="https://cdn.jsdelivr.net/gh/bobaipeng/image/typora/image-20220209094655054.png" alt=""></p>
-<h4 id="3-4-导入属性、函数、类"><a href="#3-4-导入属性、函数、类" class="headerlink" title="3.4 导入属性、函数、类"></a>3.4 导入属性、函数、类</h4><p> <strong>$\textcolor{red}{注意:} $</strong>    ==1.完全导入：模块是import的最小单位即import后面只能到模块层面==</p>
+<h4 id="3-4-导入属性、函数、类">3.4 导入属性、函数、类</h4>
+<p><strong>$\textcolor{red}{注意:} $</strong>    ==1.完全导入：模块是import的最小单位即import后面只能到模块层面==</p>
 <p>​               ==2.部分导入：from …import …其中import后面可以是函数、类名、属性==</p>
 <p><img src="https://cdn.jsdelivr.net/gh/bobaipeng/image/typora/image-20220209094230551.png" alt=""></p>
 <p>在sub_class_3.py文件里面导入package_1里面的模块并调用属性、函数、类</p>
-<h5 id="3-3-1-直接使用import导入函数报错-可以在pycharm中看到直接-报错了"><a href="#3-3-1-直接使用import导入函数报错-可以在pycharm中看到直接-报错了" class="headerlink" title="3.3.1 直接使用import导入函数报错,可以在pycharm中看到直接==报错了=="></a>3.3.1 直接使用import导入函数报错,可以在pycharm中看到直接==报错了==</h5><p><img src="https://cdn.jsdelivr.net/gh/bobaipeng/image/typora/image-20220209093253738.png" alt=""></p>
-<h5 id="3-3-2-使用from…import…可以正常导入"><a href="#3-3-2-使用from…import…可以正常导入" class="headerlink" title="3.3.2 使用from…import…可以正常导入"></a>3.3.2 使用from…import…可以正常导入</h5><p><img src="https://cdn.jsdelivr.net/gh/bobaipeng/image/typora/image-20220209094333198.png" alt=""></p>
-<h3 id="4-import包-模块-包和模块是从哪里导入的呢？"><a href="#4-import包-模块-包和模块是从哪里导入的呢？" class="headerlink" title="4. ==import包/模块 包和模块是从哪里导入的呢？=="></a>4. ==import包/模块 包和模块是从哪里导入的呢？==</h3><p>==是通过<code>sys.path</code>所包含的路径下面顺序查找的==</p>
+<h5 id="3-3-1-直接使用import导入函数报错-可以在pycharm中看到直接-报错了">3.3.1 直接使用import导入函数报错,可以在pycharm中看到直接==报错了==</h5>
+<p><img src="https://cdn.jsdelivr.net/gh/bobaipeng/image/typora/image-20220209093253738.png" alt=""></p>
+<h5 id="3-3-2-使用from…import…可以正常导入">3.3.2 使用from…import…可以正常导入</h5>
+<p><img src="https://cdn.jsdelivr.net/gh/bobaipeng/image/typora/image-20220209094333198.png" alt=""></p>
+<h3 id="4-import包-模块-包和模块是从哪里导入的呢？">4. ==import包/模块 包和模块是从哪里导入的呢？==</h3>
+<p>==是通过<code>sys.path</code>所包含的路径下面顺序查找的==</p>
 <p>先看<code>sys.path</code>返回的路径</p>
 <p><img src="https://cdn.jsdelivr.net/gh/bobaipeng/image/typora/image-20220209095253037.png" alt=""></p>
 <p>可以看到==1.当前文件所在的路径放在第一位==</p>
 <p>​                ==2.当前工程路径放在第二位==</p>
 <p>​               ==3.pycharm相关路径放在第三位，其他的就是所安装python的相关的路径==</p>
-<h3 id="5-init-py的作用详解"><a href="#5-init-py的作用详解" class="headerlink" title="5. __init__.py的作用详解"></a>5. <code>__init__.py</code>的作用详解</h3><ul>
+<h3 id="5-init-py的作用详解">5. <code>__init__.py</code>的作用详解</h3>
+<ul>
 <li>在python3.3之前，此文件必须在包内存在，这个包才是module package ，在3.3之后这个文件不是必须的了，可以不存在</li>
 <li>这个文件没有强制要求，可以是一个空文件，也可以有内容</li>
 <li>包的作用是组织多个模块或者子包提供功能集，而导入包就相当于导入这个包的<code>__init__.py</code>文件，因为实际使用的时候这个文件的具体作用是导入该包内所包含的模块，即在此文件中使用<code>import...</code> 、<code>from....import...</code></li>
@@ -516,7 +530,7 @@
 <p><img src="https://cdn.jsdelivr.net/gh/bobaipeng/image/typora/image-20220209144523112.png" alt=""></p>
 <p><strong><code>sub_class_4.py文件内容</code></strong></p>
 <p><img src="https://cdn.jsdelivr.net/gh/bobaipeng/image/typora/image-20220209144700113.png" alt=""></p>
-<p>结论：因为在package<em>1下面的<code>__init__.py</code>文件中导入了sub<em>class_1的类、属性、函数,在`package_1\sub_package__init</em></em>.py<code>文件中导入了</code>sub_sub_class.py<code>文件里的属性，所以这些都是包package_1的成员了，而我们在</code>sub_class_4.py<code>中导入了包</code>package_1`,然后就可以通过==<strong>包名.成员</strong>==的方式调用了</p>
+<p>结论：因为在package_1下面的<code>__init__.py</code>文件中导入了sub_class_1的类、属性、函数,在<code>package_1\sub_package\__init__.py</code>文件中导入了<code>sub_sub_class.py</code>文件里的属性，所以这些都是包package_1的成员了，而我们在<code>sub_class_4.py</code>中导入了包<code>package_1</code>,然后就可以通过==<strong>包名.成员</strong>==的方式调用了</p>
 
 
         <hr>
@@ -616,7 +630,7 @@
       distractionFreeMode: false, // Facebook-like distraction free mode
       perPage: 10,
       pagerDirection: 'last',
-      createIssueManually: false,
+      createIssueManually: true,
       language: 'zh-CN',
       proxy: 'https://misty-tooth-5aea.524027223.workers.dev/https://github.com/login/oauth/access_token'
     });

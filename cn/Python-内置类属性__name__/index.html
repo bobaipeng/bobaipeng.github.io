@@ -245,23 +245,12 @@
 
           
           
-          <li>
-            <a href="/tags/">
-              
-              标签
-              
-              
-            </a>
-          </li>
-          
-          
-          
           
           
           <li>
-            <a href="/about/">
+            <a href="/archive/">
               
-              关于
+              归档
               
               
             </a>
@@ -281,9 +270,20 @@
           
           
           <li>
-            <a href="/archive/">
+            <a href="/about/">
               
-              归档
+              关于
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              标签
               
               
             </a>
@@ -410,7 +410,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">456</span> In Total
+              Words <span class="post-count">457</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -472,17 +472,20 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h3 id="1-name-的由来以及含义"><a href="#1-name-的由来以及含义" class="headerlink" title="1.__name__的由来以及含义"></a>1.<code>__name__</code>的由来以及含义</h3><ul>
+        <h3 id="1-name-的由来以及含义">1.<code>__name__</code>的由来以及含义</h3>
+<ul>
 <li><code>__name__</code>是Python的一个内置类属性，是标识模块的名字的一个系统变量</li>
 <li>Python的模块可以被调用，也可以被单独执行</li>
 <li>如果当前模块被直接执行，会首先将此值赋为<code>__main__</code>，那么<code>__name__</code>存储的是<code>__main__</code></li>
 <li>如果当前模块是被导入的，那么<code>__name__</code>存储的就是当前模块.py文件的文件名(模块名称)</li>
-<li>通过<strong>`</strong>name__`中存储的值，Python就可以知道哪些是主函数，进入主函数执行，并调用其他的模块</li>
+<li>通过__<code>__name__</code>中存储的值，Python就可以知道哪些是主函数，进入主函数执行，并调用其他的模块</li>
 </ul>
 <p>举个例子<code>a.py</code>文件内容如下：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func_a</span>():</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;a.py的变量__name__的名字是&#x27;</span>+ __name__)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">    func_a()</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
-<h3 id="2-使用python-a-py-直接执行以上文件的时候，以上代码的执行流程"><a href="#2-使用python-a-py-直接执行以上文件的时候，以上代码的执行流程" class="headerlink" title="2.使用python  a.py 直接执行以上文件的时候，以上代码的执行流程:"></a>2.使用<code>python  a.py</code> 直接执行以上文件的时候，以上代码的执行流程:</h3><p><img src="https://cdn.jsdelivr.net/gh/bobaipeng/image/typora/image-20220215093232005.png" alt=""></p>
-<h3 id="3-被其他模块调用，在b-py中把a-py当作模块导入，并且调用func-c函数"><a href="#3-被其他模块调用，在b-py中把a-py当作模块导入，并且调用func-c函数" class="headerlink" title="3.被其他模块调用，在b.py中把a.py当作模块导入，并且调用func_c函数"></a>3.被其他模块调用，在<code>b.py</code>中把<code>a.py</code>当作模块导入，并且调用func_c函数</h3><p><code>b.py</code>的代码如下:</p>
+<h3 id="2-使用python-a-py-直接执行以上文件的时候，以上代码的执行流程">2.使用<code>python  a.py</code> 直接执行以上文件的时候，以上代码的执行流程:</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/bobaipeng/image/typora/image-20220215093232005.png" alt=""></p>
+<h3 id="3-被其他模块调用，在b-py中把a-py当作模块导入，并且调用func-c函数">3.被其他模块调用，在<code>b.py</code>中把<code>a.py</code>当作模块导入，并且调用func_c函数</h3>
+<p><code>b.py</code>的代码如下:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> sys,os</span><br><span class="line">project_path = <span class="string">&#x27;D:\code\sfe1\sense-foundry-enterprise&#x27;</span></span><br><span class="line"><span class="comment"># os.chdir(project_path)</span></span><br><span class="line"><span class="comment"># for file in os.listdir(os.getcwd()):</span></span><br><span class="line"><span class="comment">#     print(file)</span></span><br><span class="line"><span class="comment"># 将项目路径保存</span></span><br><span class="line">sys.path.append(project_path)</span><br><span class="line"><span class="keyword">from</span> bobtest.package_2 <span class="keyword">import</span> a</span><br><span class="line">a.func_a()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;b.py的变量__name__的名字是&#x27;</span> + __name__)</span><br></pre></td></tr></table></figure>
 <p>此时的执行流程：</p>
 <ol>
@@ -588,7 +591,7 @@
       distractionFreeMode: false, // Facebook-like distraction free mode
       perPage: 10,
       pagerDirection: 'last',
-      createIssueManually: false,
+      createIssueManually: true,
       language: 'zh-CN',
       proxy: 'https://misty-tooth-5aea.524027223.workers.dev/https://github.com/login/oauth/access_token'
     });

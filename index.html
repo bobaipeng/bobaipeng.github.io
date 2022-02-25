@@ -245,23 +245,12 @@
 
           
           
-          <li>
-            <a href="/tags/">
-              
-              标签
-              
-              
-            </a>
-          </li>
-          
-          
-          
           
           
           <li>
-            <a href="/about/">
+            <a href="/archive/">
               
-              关于
+              归档
               
               
             </a>
@@ -281,9 +270,20 @@
           
           
           <li>
-            <a href="/archive/">
+            <a href="/about/">
               
-              归档
+              关于
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              标签
               
               
             </a>
@@ -528,11 +528,12 @@ This LiveMyLife theme created by Vincent modified from the original Porter YenYu
     </h3>
     <div class="post-content-preview">
       1.__name__的由来以及含义
+
 __name__是Python的一个内置类属性，是标识模块的名字的一个系统变量
 Python的模块可以被调用，也可以被单独执行
 如果当前模块被直接执行，会首先将此值赋为__main__，那么__name__存储的是__main__
 如果当前模块是被导入的，那么__name__存储的就是当前模块.py文件的文件名(模块名称)
-通过`name__`中存储的值，......
+通过____name__中存储......
     </div>
   </a>
   
@@ -565,10 +566,11 @@ Python的模块可以被调用，也可以被单独执行
       
     </h3>
     <div class="post-content-preview">
-      1.使用 命令python xxx.py文件执行文件时，报错ModuleNotFoundError: No module named项目目录：
+      1.使用 命令python xxx.py文件执行文件时，报错ModuleNotFoundError: No module named
+项目目录：
 
 因为bobtest 是父级目录，而import的时候是从本目录找，所以要将项目目录加到path中
-12345678# -*- coding: UTF-8 -*-import sys,osproject_path = &#x27;D:\code\sf......
+12345678# -*- coding: UTF-8 -*-import sys,osproject_path = &#x27;D:\code\s......
     </div>
   </a>
   
@@ -601,8 +603,10 @@ Python的模块可以被调用，也可以被单独执行
       
     </h3>
     <div class="post-content-preview">
-      1.Python的执行顺序：从上往下，一行一行执行
-2.Python代码执行的入口：Python中执行入口（主函数 main函数）：
+      1.Python的执行顺序：
+从上往下，一行一行执行
+2.Python代码执行的入口：
+Python中执行入口（主函数 main函数）：
 12if __name__ == &#x27;main&#x27;:    print(&#x27;代码入口&#x27;)
 上面代码的含义：
 1.if…:如果运行的程序是自己，就运行自己
@@ -639,10 +643,12 @@ Python的模块可以被调用，也可以被单独执行
       
     </h3>
     <div class="post-content-preview">
-      1. 导入的目的是什么？将Python的一些功能函数导入到当前的脚本中使用，很多函数不能导入是不能使用的，除了内置函数如print()
+      1. 导入的目的是什么？
+将Python的一些功能函数导入到当前的脚本中使用，很多函数不能导入是不能使用的，除了内置函数如print()
 1234# -*- coding: UTF-8 -*-import syssys.pathprint(1)
-2. 导入的位置一般在什么地方？为什么？导入的位置一般在头注释下面，因为程序是自顶向下进行执行的，头注释之后就可以进行导入了，然后进行函数调用
-3. ......
+2. 导入的位置一般在什么地方？为什么？
+导入的位置一般在头注释下面，因为程序是自顶向下进行执行的，头注释之后就可以进行导入了，然后进行函数调用
+3......
     </div>
   </a>
   
@@ -675,10 +681,12 @@ Python的模块可以被调用，也可以被单独执行
       
     </h3>
     <div class="post-content-preview">
-      1.github关于cdn加速
+      1.github
+关于cdn加速
 https://www.cnblogs.com/bobpeng/p/15867437.html
 
-2.giteegitee插件：gitee-smart 1.1.7
+2.gitee
+gitee插件：gitee-smart 1.1.7
 
 ...
     </div>
@@ -747,8 +755,9 @@ Qu......
       
     </h3>
     <div class="post-content-preview">
-      1.你使用Git+TortoiseGit对项目进行版本控制，本地库（自己电脑建立的.git）与远程库（如GitLab上建立）通信需要使用ssh验证，你用git生成公钥并保存到了Gitlab上，但当你用tortoiseGit拉取项目，却依然报错no supported authentication methods available关键点 ：
-git生成的公钥与tortoiseGit生成的公钥......
+      1.你使用Git+TortoiseGit对项目进行版本控制，本地库（自己电脑建立的.git）与远程库（如GitLab上建立）通信需要使用ssh验证，你用git生成公钥并保存到了Gitlab上，但当你用tortoiseGit拉取项目，却依然报错no supported authentication methods available
+关键点 ：
+git生成的公钥与tortoiseGit生成的公......
     </div>
   </a>
   
@@ -815,10 +824,12 @@ git生成的公钥与tortoiseGit生成的公钥......
       
     </h3>
     <div class="post-content-preview">
-      1.安装插件1npm install hexo-generator-index --save
+      1.安装插件
+1npm install hexo-generator-index --save
 1npm install hexo-generator-archive --save
 1npm install hexo-generator-tag --save
-2.config.yaml里面配置1234567891011121314151617181920# Algolia Search# Fo......
+2.config.yaml里面配置
+1234567891011121314151617181920# Algolia Search# ......
     </div>
   </a>
   
@@ -888,7 +899,7 @@ git生成的公钥与tortoiseGit生成的公钥......
     
     
     
-    <a href="/tags/#github" title="github" rel="3">github</a>
+    <a href="/tags/#Python" title="Python" rel="3">Python</a>
     
     
     
@@ -896,7 +907,7 @@ git生成的公钥与tortoiseGit生成的公钥......
     
     
     
-    <a href="/tags/#Python" title="Python" rel="3">Python</a>
+    <a href="/tags/#github" title="github" rel="3">github</a>
     
     
     
@@ -1027,16 +1038,16 @@ git生成的公钥与tortoiseGit生成的公钥......
       <li>Hexo-Theme-LiveMyLife</li>
     </a>
     
-    <a href="/categories/#git">
-      <li>git</li>
+    <a href="/categories/#Python学习">
+      <li>Python学习</li>
     </a>
     
     <a href="/categories/#hexo">
       <li>hexo</li>
     </a>
     
-    <a href="/categories/#Python学习">
-      <li>Python学习</li>
+    <a href="/categories/#git">
+      <li>git</li>
     </a>
     
   </ul>

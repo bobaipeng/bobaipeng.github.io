@@ -245,23 +245,12 @@
 
           
           
-          <li>
-            <a href="/tags/">
-              
-              标签
-              
-              
-            </a>
-          </li>
-          
-          
-          
           
           
           <li>
-            <a href="/about/">
+            <a href="/archive/">
               
-              关于
+              归档
               
               
             </a>
@@ -281,9 +270,20 @@
           
           
           <li>
-            <a href="/archive/">
+            <a href="/about/">
               
-              归档
+              关于
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              标签
               
               
             </a>
@@ -472,7 +472,8 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h3 id="1-你使用Git-TortoiseGit对项目进行版本控制，本地库（自己电脑建立的-git）与远程库（如GitLab上建立）通信需要使用ssh验证，你用git生成公钥并保存到了Gitlab上，但当你用tortoiseGit拉取项目，却依然报错no-supported-authentication-methods-available"><a href="#1-你使用Git-TortoiseGit对项目进行版本控制，本地库（自己电脑建立的-git）与远程库（如GitLab上建立）通信需要使用ssh验证，你用git生成公钥并保存到了Gitlab上，但当你用tortoiseGit拉取项目，却依然报错no-supported-authentication-methods-available" class="headerlink" title="1.你使用Git+TortoiseGit对项目进行版本控制，本地库（自己电脑建立的.git）与远程库（如GitLab上建立）通信需要使用ssh验证，你用git生成公钥并保存到了Gitlab上，但当你用tortoiseGit拉取项目，却依然报错no supported authentication methods available"></a>1.你使用Git+TortoiseGit对项目进行版本控制，本地库（自己电脑建立的.git）与远程库（如GitLab上建立）通信需要使用ssh验证，你用git生成公钥并保存到了Gitlab上，但当你用tortoiseGit拉取项目，却依然报错no supported authentication methods available</h3><p><strong>关键点 ：</strong></p>
+        <h3 id="1-你使用Git-TortoiseGit对项目进行版本控制，本地库（自己电脑建立的-git）与远程库（如GitLab上建立）通信需要使用ssh验证，你用git生成公钥并保存到了Gitlab上，但当你用tortoiseGit拉取项目，却依然报错no-supported-authentication-methods-available">1.你使用Git+TortoiseGit对项目进行版本控制，本地库（自己电脑建立的.git）与远程库（如GitLab上建立）通信需要使用ssh验证，你用git生成公钥并保存到了Gitlab上，但当你用tortoiseGit拉取项目，却依然报错no supported authentication methods available</h3>
+<p><strong>关键点 ：</strong></p>
 <p>git生成的公钥与tortoiseGit生成的公钥是不一致，不共用的。</p>
 <p><strong>解决方案：</strong></p>
 <p>(1)tortoiseGit关联git的sshkey，上述情景的问题就解决了</p>
@@ -578,7 +579,7 @@
       distractionFreeMode: false, // Facebook-like distraction free mode
       perPage: 10,
       pagerDirection: 'last',
-      createIssueManually: false,
+      createIssueManually: true,
       language: 'zh-CN',
       proxy: 'https://misty-tooth-5aea.524027223.workers.dev/https://github.com/login/oauth/access_token'
     });

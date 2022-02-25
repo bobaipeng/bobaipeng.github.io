@@ -245,23 +245,12 @@
 
           
           
-          <li>
-            <a href="/tags/">
-              
-              标签
-              
-              
-            </a>
-          </li>
-          
-          
-          
           
           
           <li>
-            <a href="/about/">
+            <a href="/archive/">
               
-              关于
+              归档
               
               
             </a>
@@ -281,9 +270,20 @@
           
           
           <li>
-            <a href="/archive/">
+            <a href="/about/">
               
-              归档
+              关于
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              标签
               
               
             </a>
@@ -472,9 +472,13 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h3 id="1-在github上面创建一个public的仓库-然后在仓库里上传一张图片"><a href="#1-在github上面创建一个public的仓库-然后在仓库里上传一张图片" class="headerlink" title="1.在github上面创建一个public的仓库,然后在仓库里上传一张图片"></a>1.在github上面创建一个public的仓库,然后在仓库里上传一张图片</h3><p>目前的图片地址：<a target="_blank" rel="noopener" href="https://github.com/bobaipeng/image/blob/main/qq.jpg">https://github.com/bobaipeng/image/blob/main/qq.jpg</a></p>
+        <h3 id="1-在github上面创建一个public的仓库-然后在仓库里上传一张图片">1.在github上面创建一个public的仓库,然后在仓库里上传一张图片</h3>
+<p>目前的图片地址：<a target="_blank" rel="noopener" href="https://github.com/bobaipeng/image/blob/main/qq.jpg">https://github.com/bobaipeng/image/blob/main/qq.jpg</a></p>
 <p><img src="https://cdn.jsdelivr.net/gh/bobaipeng/image/typora/image-20220223140610709.png" alt=""></p>
-<h3 id="2-因为github在本地访问太慢了，使用jsdelivr进行CDN加速-这是完全开源免费的。"><a href="#2-因为github在本地访问太慢了，使用jsdelivr进行CDN加速-这是完全开源免费的。" class="headerlink" title="2.因为github在本地访问太慢了，使用jsdelivr进行CDN加速,这是完全开源免费的。"></a>2.因为github在本地访问太慢了，使用jsdelivr进行CDN加速,这是完全开源免费的。</h3><p>使用方法，非常简单，即把图片地址链接域名改为CDN的域名。格式如下：<br><a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/">https://cdn.jsdelivr.net/gh/</a>&lt;你的github用户名&gt;/&lt;你的图床仓库名&gt;@&lt;仓库版本号&gt;/图片的路径<br>例如我的就是：<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/bobaipeng/image@main/qq.jpg">https://cdn.jsdelivr.net/gh/bobaipeng/image@main/qq.jpg</a></p>
+<h3 id="2-因为github在本地访问太慢了，使用jsdelivr进行CDN加速-这是完全开源免费的。">2.因为github在本地访问太慢了，使用jsdelivr进行CDN加速,这是完全开源免费的。</h3>
+<p>使用方法，非常简单，即把图片地址链接域名改为CDN的域名。格式如下：<br>
+<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/">https://cdn.jsdelivr.net/gh/</a>&lt;你的github用户名&gt;/&lt;你的图床仓库名&gt;@&lt;仓库版本号&gt;/图片的路径<br>
+例如我的就是：<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/bobaipeng/image@main/qq.jpg">https://cdn.jsdelivr.net/gh/bobaipeng/image@main/qq.jpg</a></p>
 <p><img src="https://cdn.jsdelivr.net/gh/bobaipeng/image/typora/image-20220223140754277.png" alt=""></p>
 
 
@@ -575,7 +579,7 @@
       distractionFreeMode: false, // Facebook-like distraction free mode
       perPage: 10,
       pagerDirection: 'last',
-      createIssueManually: false,
+      createIssueManually: true,
       language: 'zh-CN',
       proxy: 'https://misty-tooth-5aea.524027223.workers.dev/https://github.com/login/oauth/access_token'
     });
