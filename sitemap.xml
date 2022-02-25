@@ -137,13 +137,6 @@
 
   
   <url>
-    <loc>https://bobaipeng.gitee.io/tags/Hexo-Theme-LiveMyLife/</loc>
-    <lastmod>2022-02-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://bobaipeng.gitee.io/tags/hexo/</loc>
     <lastmod>2022-02-25</lastmod>
     <changefreq>daily</changefreq>
@@ -151,7 +144,7 @@
   </url>
   
   <url>
-    <loc>https://bobaipeng.gitee.io/tags/Python/</loc>
+    <loc>https://bobaipeng.gitee.io/tags/Hexo-Theme-LiveMyLife/</loc>
     <lastmod>2022-02-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -159,6 +152,13 @@
   
   <url>
     <loc>https://bobaipeng.gitee.io/tags/github/</loc>
+    <lastmod>2022-02-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bobaipeng.gitee.io/tags/Python/</loc>
     <lastmod>2022-02-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -174,13 +174,6 @@
 
   
   <url>
-    <loc>https://bobaipeng.gitee.io/categories/Hexo-Theme-LiveMyLife/</loc>
-    <lastmod>2022-02-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://bobaipeng.gitee.io/categories/hexo/</loc>
     <lastmod>2022-02-25</lastmod>
     <changefreq>daily</changefreq>
@@ -188,7 +181,7 @@
   </url>
   
   <url>
-    <loc>https://bobaipeng.gitee.io/categories/Python%E5%AD%A6%E4%B9%A0/</loc>
+    <loc>https://bobaipeng.gitee.io/categories/Hexo-Theme-LiveMyLife/</loc>
     <lastmod>2022-02-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -196,6 +189,13 @@
   
   <url>
     <loc>https://bobaipeng.gitee.io/categories/git/</loc>
+    <lastmod>2022-02-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bobaipeng.gitee.io/categories/Python%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2022-02-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
