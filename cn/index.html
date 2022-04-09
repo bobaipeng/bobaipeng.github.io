@@ -245,9 +245,9 @@
           
           
           <li>
-            <a href="/archive/">
+            <a href="/about/">
               
-              归档
+              关于
               
               
             </a>
@@ -258,9 +258,9 @@
           
           
           <li>
-            <a href="/about/">
+            <a href="/archive/">
               
-              关于
+              归档
               
               
             </a>
@@ -480,17 +480,18 @@
 
   <a href="/cn/docker-常见问题/">
     <h2 class="post-title">
-      Untitled
+      Docker 常见问题
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      title: docker常见问题
-tags: docker
-categories:docker
-1.Docker search 报错：Error response from daemon: Get https://index.docker.io/v1/…
-查阅了下资料，网上说一般是镜像加速地址配置的问题，如果已经配置过加速还是如上问题，多配置几个加速地址就行了，但还是没解决这个报错的原因，......
+      1.Docker search 报错：Error response from daemon: Get https://index.docker.io/v1/…
+查阅了下资料，网上说一般是镜像加速地址配置的问题，如果已经配置过加速还是如上问题，多配置几个加速地址就行了，但还是没解决这个报错的原因，最后找到了解决的办法，如下：
+
+查看服务器DNS网络配置
+
+1vim /etc/resolv.co......
     </div>
   </a>
   
@@ -499,6 +500,42 @@ categories:docker
     2022-04-09
   </p>
   <div class="tags">
+    
+    <a href="/tags/#docker" title="docker">docker</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/k8s集群搭建监控记录/">
+    <h2 class="post-title">
+      k8s集群搭建监控grafana和prometheus
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      一 k8s常用命令
+12345kubectl get node   #获取节点kubectl version    #查看k8s版本kubectl apply -f node-export.yamlkubectl get pods,svc -n monitor-sa -o widekubectl get pods -n monitor-sa kubectl delete pod promet......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Bob on
+    2022-04-09
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#k8s" title="k8s">k8s</a>
     
   </div>
   
@@ -803,44 +840,6 @@ git生成的公钥与tortoiseGit生成的公......
 </div>
 <hr>
 
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/Hexo-设置主页、标签、分类、归档的分页与显示文章数/">
-    <h2 class="post-title">
-      Hexo-设置主页、标签、分类、归档的分页与显示文章数
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      1.安装插件
-1npm install hexo-generator-index --save
-1npm install hexo-generator-archive --save
-1npm install hexo-generator-tag --save
-2.config.yaml里面配置
-1234567891011121314151617181920# Algolia Search# ......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bob on
-    2022-02-24
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#hexo" title="hexo">hexo</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
 
   <!-- Pager -->
   <ul class="pager">
@@ -893,11 +892,11 @@ git生成的公钥与tortoiseGit生成的公......
     
     
     
-    <a href="/tags/#hexo" title="hexo" rel="4">hexo</a>
-    
-    
-    
     <a href="/tags/#Python" title="Python" rel="3">Python</a>
+    
+    
+    
+    <a href="/tags/#hexo" title="hexo" rel="4">hexo</a>
     
     
     
@@ -906,6 +905,14 @@ git生成的公钥与tortoiseGit生成的公......
     
     
     <a href="/tags/#Python常见问题" title="Python常见问题" rel="1">Python常见问题</a>
+    
+    
+    
+    <a href="/tags/#docker" title="docker" rel="1">docker</a>
+    
+    
+    
+    <a href="/tags/#k8s" title="k8s" rel="1">k8s</a>
     
     
   </div>
@@ -969,7 +976,11 @@ git生成的公钥与tortoiseGit生成的公......
   <ul>
     
     <a href="docker-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">
-      <li>(no title)</li>
+      <li>Docker 常见问题</li>
+    </a>
+    
+    <a href="k8s%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA%E7%9B%91%E6%8E%A7%E8%AE%B0%E5%BD%95/">
+      <li>k8s集群搭建监控grafana和prometheus</li>
     </a>
     
     <a href="Python-%E5%86%85%E7%BD%AE%E7%B1%BB%E5%B1%9E%E6%80%A7__name__/">
@@ -982,10 +993,6 @@ git生成的公钥与tortoiseGit生成的公......
     
     <a href="Python-3%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F%E3%80%81%E6%89%A7%E8%A1%8C%E5%85%A5%E5%8F%A3/">
       <li>Python-3执行顺序、执行入口</li>
-    </a>
-    
-    <a href="Python-2%E5%AF%BC%E5%85%A5%E3%80%81%E6%A8%A1%E5%9D%97%E3%80%81%E5%8C%85/">
-      <li>Python-2导入、模块、包</li>
     </a>
     
   </ul>
@@ -1016,7 +1023,7 @@ git生成的公钥与tortoiseGit生成的公......
 
 <h5><a href="/archives/">archives</a></h5>
 <div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../archives/2022/04/">April 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archives/2022/02/">February 2022</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archives/2020/04/">April 2020</a><span class="archive-list-count">2</span></li></ul>
+  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../archives/2022/04/">April 2022</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archives/2022/02/">February 2022</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archives/2020/04/">April 2020</a><span class="archive-list-count">2</span></li></ul>
 </div>
 
 
@@ -1032,16 +1039,24 @@ git生成的公钥与tortoiseGit生成的公......
       <li>Hexo-Theme-LiveMyLife</li>
     </a>
     
-    <a href="/categories/#hexo">
-      <li>hexo</li>
-    </a>
-    
     <a href="/categories/#Python学习">
       <li>Python学习</li>
     </a>
     
+    <a href="/categories/#hexo">
+      <li>hexo</li>
+    </a>
+    
     <a href="/categories/#git">
       <li>git</li>
+    </a>
+    
+    <a href="/categories/#docker">
+      <li>docker</li>
+    </a>
+    
+    <a href="/categories/#k8s">
+      <li>k8s</li>
     </a>
     
   </ul>

@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-xxxxxx-xx"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-xxxxxx-xx');
+    </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+    <script type="text/javascript">
+      // Originial
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  <!-- Baidu Push -->
+  
+    <script>
+      (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+      })();
+    </script>
+  
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc"/>
+  <meta name="baidu-site-verification" content="PpzM9WxOJU"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="It&#39;s an IT blog..."/>
+  <meta name="keyword" content="v-vincen,v-vincen,livemylife,IT  blog,Blog"/>
+  <link rel="shortcut icon" href="/img/avatar/roguerabbit.jpg"/>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css"/>
+    <link rel="stylesheet" href="/css/widget.css"/>
+    <link rel="stylesheet" href="/css/rocket.css"/>
+    <link rel="stylesheet" href="/css/signature.css"/>
+    <link rel="stylesheet" href="/css/catalog.css"/>
+    <link rel="stylesheet" href="/css/livemylife.css"/>
+
+    
+      <!-- wave start -->
+      <link rel="stylesheet" href="/css/wave.css"/>
+      <!-- wave end -->
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+      <!-- gitalk start -->
+      <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"> -->
+      <link rel="stylesheet" href="/css/gitalk.css"/>
+      <!-- gitalk end -->
+    
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="https://bobaipeng.gitee.io/cn/k8s集群搭建监控记录/">
+  <title>
+    
+      k8s集群搭建监控grafana和prometheus - either thin | or die
+    
+  </title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+	<body ontouchstart="" class="body--light body--light">
+
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+<script>
+  //getCookieValue
+  function getCookieValue(a) {
+    var b = document.cookie.match('(^|[^;]+)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b
+      ? b.pop()
+      : '';
+  }
+  let themeMode = 'light';
+  if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
+    let dbody = document.body.classList;
+    themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
+  }
+
+  //setCookieValue
+  var toggleBtn = document.querySelector(".toggle");
+  toggleBtn.addEventListener("click", function () {
+    var e = document.body.classList.contains("body--dark");
+    var cookieString = e
+      ? "dark"
+      : "light";
+    var exp = new Date();
+    exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
+    document.cookie = "sb-color-mode=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+		<!-- Gitter -->
+<!-- Docs:https://gitter.im/?utm_source=left-menu-logo -->
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'your-community/your-room'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Live My Life</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">首页</a>
+          </li>
+
+          
+          
+          <li>
+            <a href="/about/">
+              
+              关于
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          <li>
+            <a href="/archive/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              标签
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              分类
+              
+              
+            </a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>搜索</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    .body--light {
+      /* intro-header */
+      --intro-header-background-image-url-home: url('/img/header_img/newhome_bg.jpg');
+      --intro-header-background-image-url-post: url('');
+      --intro-header-background-image-url-page: url('/img/header_img/archive_bg2.jpg');
+    }
+    .body--dark {
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/newhome_bg.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/archive_bg2.jpg');
+    }
+
+    header.intro-header {
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url(''); */
+      
+    }
+
+    
+      #signature {/*signature*/
+        background-image: url('/img/signature/vincent-white.png');
+      }
+    
+  </style>
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#k8s" title="k8s">k8s</a>
+              
+            </div>
+            <h1>k8s集群搭建监控grafana和prometheus</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by Bob on
+              2022-04-09
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">22</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">4.3k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h1>一 k8s常用命令</h1>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">kubectl get node   <span class="comment">#获取节点</span></span><br><span class="line">kubectl version    <span class="comment">#查看k8s版本</span></span><br><span class="line">kubectl apply -f node-export.yaml</span><br><span class="line">kubectl get pods,svc -n monitor-sa -o wide</span><br><span class="line">kubectl get pods -n monitor-sa kubectl delete pod prometheus-server-69c65cb644-zwdbr -n monitor-sa</span><br></pre></td></tr></table></figure>
+<h1>二 环境规划</h1>
+<table>
+<thead>
+<tr>
+<th>ip</th>
+<th>主机名</th>
+<th>角色</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10.151.5.97</td>
+<td>vpc11</td>
+<td>master</td>
+</tr>
+<tr>
+<td>10.151.5.98</td>
+<td>vpc12</td>
+<td></td>
+</tr>
+<tr>
+<td>10.151.5.99</td>
+<td>vpc13</td>
+<td></td>
+</tr>
+<tr>
+<td>10.151.5.100</td>
+<td>vpc14</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[root@vpc11 prometheus]<span class="comment"># kubectl get node</span></span><br><span class="line">NAME    STATUS   ROLES    AGE   VERSION</span><br><span class="line">vpc11   Ready    master   9d    v1.17.3</span><br><span class="line">vpc12   Ready    &lt;none&gt;   9d    v1.17.3</span><br><span class="line">vpc13   Ready    &lt;none&gt;   9d    v1.17.3</span><br><span class="line">vpc14   Ready    &lt;none&gt;   9d    v1.17.3</span><br><span class="line">vpc21   Ready    master   9d    v1.17.3</span><br><span class="line">vpc22   Ready    &lt;none&gt;   9d    v1.17.3</span><br><span class="line">vpc23   Ready    &lt;none&gt;   9d    v1.17.3</span><br><span class="line">vpc24   Ready    &lt;none&gt;   9d    v1.17.3</span><br><span class="line">vpc31   Ready    master   9d    v1.17.3</span><br><span class="line">vpc32   Ready    &lt;none&gt;   9d    v1.17.3</span><br><span class="line">vpc33   Ready    &lt;none&gt;   9d    v1.17.3</span><br><span class="line">vpc34   Ready    &lt;none&gt;   9d    v1.17.3</span><br></pre></td></tr></table></figure>
+<p>系统版本：<code>cat /etc/redhat-release</code><br>
+CentOS Linux release 7.7.1908 (Core）</p>
+<p>k8s版本：v1.17.3</p>
+<h1>三 node-exporter安装和配置</h1>
+<p>参考：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/hujinzhong/p/14999877.html">https://www.cnblogs.com/hujinzhong/p/14999877.html</a></p>
+<h3 id="3-1、node-exporter介绍">3.1、node-exporter介绍</h3>
+<p>node-exporter可以采集机器（物理机、虚拟机、云主机等）的监控指标数据，能够采集到的指标包括CPU, 内存，磁盘，网络，文件数等信息。</p>
+<h3 id="3-2、node-exporter安装-（prom-node-exporter-镜像取最新版）">3.2、node-exporter安装 （prom/node-exporter 镜像取最新版）</h3>
+<p>在vpc11节点</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建监控namespace</span></span><br><span class="line">[root@vpc11 prometheus]<span class="comment"># kubectl create ns monitor-sa</span></span><br><span class="line">namespace/monitor-sa created</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建node-export.yaml</span></span><br><span class="line">[root@vpc11 prometheus]<span class="comment"># cat node-export.yaml</span></span><br><span class="line">apiVersion: apps/v1</span><br><span class="line">kind: DaemonSet <span class="comment"># 可以保证k8s集群的每个节点都运行完全一样的pod</span></span><br><span class="line">metadata:</span><br><span class="line">  name: node-exporter</span><br><span class="line">  namespace: monitor-sa</span><br><span class="line">  labels:</span><br><span class="line">    name: node-exporter</span><br><span class="line">spec:</span><br><span class="line">  selector:</span><br><span class="line">    matchLabels:</span><br><span class="line">     name: node-exporter</span><br><span class="line">  template:</span><br><span class="line">    metadata:</span><br><span class="line">      labels:</span><br><span class="line">        name: node-exporter</span><br><span class="line">    spec:</span><br><span class="line">      hostPID: <span class="literal">true</span></span><br><span class="line">      hostIPC: <span class="literal">true</span></span><br><span class="line">      hostNetwork: <span class="literal">true</span></span><br><span class="line">      containers:</span><br><span class="line">      - name: node-exporter</span><br><span class="line">        image: prom/node-exporter <span class="comment">#镜像版本</span></span><br><span class="line">        ports:</span><br><span class="line">        - containerPort: 9100 <span class="comment">#端口</span></span><br><span class="line">        resources:</span><br><span class="line">          requests:</span><br><span class="line">            cpu: 0.15 <span class="comment"># 这个容器运行至少需要0.15核cpu</span></span><br><span class="line">        securityContext:</span><br><span class="line">          privileged: <span class="literal">true</span>	<span class="comment"># 开启特权模式</span></span><br><span class="line">        args:</span><br><span class="line">        - --path.procfs</span><br><span class="line">        - /host/proc</span><br><span class="line">        - --path.sysfs</span><br><span class="line">        - /host/sys</span><br><span class="line">        - --collector.filesystem.ignored-mount-points</span><br><span class="line">        - <span class="string">&#x27;&quot;^/(sys|proc|dev|host|etc)($|/)&quot;&#x27;</span></span><br><span class="line">        volumeMounts:</span><br><span class="line">        - name: dev</span><br><span class="line">          mountPath: /host/dev</span><br><span class="line">        - name: proc</span><br><span class="line">          mountPath: /host/proc</span><br><span class="line">        - name: sys</span><br><span class="line">          mountPath: /host/sys</span><br><span class="line">        - name: rootfs</span><br><span class="line">          mountPath: /rootfs</span><br><span class="line">      tolerations:</span><br><span class="line">      - key: <span class="string">&quot;node-role.kubernetes.io/master&quot;</span></span><br><span class="line">        operator: <span class="string">&quot;Exists&quot;</span></span><br><span class="line">        effect: <span class="string">&quot;NoSchedule&quot;</span></span><br><span class="line">      volumes:</span><br><span class="line">        - name: proc</span><br><span class="line">          hostPath:</span><br><span class="line">            path: /proc</span><br><span class="line">        - name: dev</span><br><span class="line">          hostPath:</span><br><span class="line">            path: /dev</span><br><span class="line">        - name: sys</span><br><span class="line">          hostPath:</span><br><span class="line">            path: /sys</span><br><span class="line">        - name: rootfs</span><br><span class="line">          hostPath:</span><br><span class="line">            path: /</span><br><span class="line">            </span><br><span class="line"><span class="comment"># hostNetwork、hostIPC、hostPID都为True时，表示这个Pod里的所有容器，会直接使用宿主机的网络，直接与宿主机进行IPC（进程间通信）通信，可以看到宿主机里正在运行的所有进程。加入了hostNetwork:true会直接将我们的宿主机的9100端口映射出来，从而不需要创建service 在我们的宿主机上就会有一个9100的端口</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新node-exporter.yaml文件</span></span><br><span class="line">[[root@vpc11 prometheus]<span class="comment"># kubectl apply -f node-export.yaml</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看node-exporter是否部署成功   可以看到每个节点上都有</span></span><br><span class="line">[root@vpc11 prometheus]<span class="comment"># kubectl get pods -n monitor-sa -o wide</span></span><br><span class="line">NAME                                  READY   STATUS    RESTARTS   AGE    IP               NODE    NOMINATED NODE   READINESS GATES</span><br><span class="line">node-exporter-2khn4                   1/1     Running   0          2d1h   10.151.5.99      vpc13   &lt;none&gt;           &lt;none&gt;</span><br><span class="line">node-exporter-92rwk                   1/1     Running   0          2d2h   10.151.5.103     vpc23   &lt;none&gt;           &lt;none&gt;</span><br><span class="line">node-exporter-dfpdq                   1/1     Running   0          2d1h   10.151.5.98      vpc12   &lt;none&gt;           &lt;none&gt;</span><br><span class="line">node-exporter-jpl5t                   1/1     Running   0          2d1h   10.151.5.104     vpc24   &lt;none&gt;           &lt;none&gt;</span><br><span class="line">node-exporter-m7rbm                   1/1     Running   0          2d1h   10.151.5.105     vpc31   &lt;none&gt;           &lt;none&gt;</span><br><span class="line">node-exporter-rvb72                   1/1     Running   0          2d1h   10.151.5.108     vpc34   &lt;none&gt;           &lt;none&gt;</span><br><span class="line">node-exporter-sc4h8                   1/1     Running   0          2d1h   10.151.5.102     vpc22   &lt;none&gt;           &lt;none&gt;</span><br><span class="line">node-exporter-smppn                   1/1     Running   0          2d1h   10.151.5.97      vpc11   &lt;none&gt;           &lt;none&gt;</span><br><span class="line">node-exporter-t4zr2                   1/1     Running   0          2d1h   10.151.5.107     vpc33   &lt;none&gt;           &lt;none&gt;</span><br><span class="line">node-exporter-t928p                   1/1     Running   0          2d1h   10.151.5.106     vpc32   &lt;none&gt;           &lt;none&gt;</span><br><span class="line">node-exporter-t997j                   1/1     Running   0          2d1h   10.151.5.101     vpc21   &lt;none&gt;           &lt;none&gt;</span><br><span class="line">node-exporter-tz8nc                   1/1     Running   0          2d2h   10.151.5.100     vpc14   &lt;none&gt;           &lt;none&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过node-exporter采集数据 curl  http://主机ip:9100/metrics</span></span><br><span class="line"><span class="comment"># node-export默认的监听端口是9100，可以看到当前主机获取到的所有监控数据</span></span><br><span class="line">[root@vpc11 prometheus]<span class="comment"># curl http://10.151.5.97:9100/metrics | grep node_cpu_seconds</span></span><br><span class="line">  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current</span><br><span class="line">                                 Dload  Upload   Total   Spent    Left  Speed</span><br><span class="line">  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0<span class="comment"># HELP node_cpu_seconds_total Seconds the CPUs spent in each mode.</span></span><br><span class="line"><span class="comment"># TYPE node_cpu_seconds_total counter</span></span><br><span class="line">node_cpu_seconds_total&#123;cpu=<span class="string">&quot;0&quot;</span>,mode=<span class="string">&quot;idle&quot;</span>&#125; 830491.05</span><br><span class="line">node_cpu_seconds_total&#123;cpu=<span class="string">&quot;0&quot;</span>,mode=<span class="string">&quot;iowait&quot;</span>&#125; 573.17</span><br><span class="line">node_cpu_seconds_total&#123;cpu=<span class="string">&quot;0&quot;</span>,mode=<span class="string">&quot;irq&quot;</span>&#125; 0</span><br><span class="line">node_cpu_seconds_total&#123;cpu=<span class="string">&quot;0&quot;</span>,mode=<span class="string">&quot;nice&quot;</span>&#125; 0.08</span><br><span class="line">node_cpu_seconds_total&#123;cpu=<span class="string">&quot;0&quot;</span>,mode=<span class="string">&quot;softirq&quot;</span>&#125; 461.32</span><br><span class="line">node_cpu_seconds_total&#123;cpu=<span class="string">&quot;0&quot;</span>,mode=<span class="string">&quot;steal&quot;</span>&#125; 49.4</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[root@vpc11 prometheus]<span class="comment"># curl http://10.151.5.97:9100/metrics | grep node_load</span></span><br><span class="line">  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current</span><br><span class="line">                                 Dload  Upload   Total   Spent    Left  Speed</span><br><span class="line">  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0<span class="comment"># HELP node_load1 1m load average.</span></span><br><span class="line"><span class="comment"># TYPE node_load1 gauge</span></span><br><span class="line">node_load1 0.26</span><br><span class="line"><span class="comment"># HELP node_load15 15m load average.</span></span><br><span class="line"><span class="comment"># TYPE node_load15 gauge</span></span><br><span class="line">node_load15 0.2</span><br><span class="line"><span class="comment"># HELP node_load5 5m load average.</span></span><br><span class="line"><span class="comment"># TYPE node_load5 gauge</span></span><br><span class="line">node_load5 0.28</span><br><span class="line">100 95361    0 95361    0     0  8443k      0 --:--:-- --:--:-- --:--:-- 9312k</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1>四 Prometheus安装和配置 版本：2.34.0</h1>
+<h3 id="4-1、Prometheus安装">4.1、Prometheus安装</h3>
+<h4 id="1）创建sa账号，对sa做rbac授权"><strong>1）创建sa账号，对sa做rbac授权</strong></h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建一个sa账号monitor</span></span><br><span class="line">[root@vpc11 prometheus]<span class="comment"># kubectl create serviceaccount monitor -n monitor-sa</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 把sa账号monitor通过clusterrolebing绑定到clusterrole上</span></span><br><span class="line">[root@vpc11 prometheus]<span class="comment"># kubectl create clusterrolebinding monitor-clusterrolebinding -n monitor-sa --clusterrole=cluster-admin  --serviceaccount=monitor-sa:monitor</span></span><br></pre></td></tr></table></figure>
+<h4 id="2）vpc12节点创建prometheus数据存储目录-prodata"><strong>2）vpc12节点创建prometheus数据存储目录 /prodata</strong></h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将prometheus调度到vpc12节点 10.151.5.98</span></span><br><span class="line">[root@vpc12 ~]<span class="comment"># mkdir /prodata &amp;&amp; chmod 777 /prodata</span></span><br></pre></td></tr></table></figure>
+<h4 id="3）创建一个configmap存储卷，用来存放prometheus配置信息"><strong>3）创建一个configmap存储卷，用来存放prometheus配置信息</strong></h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line">[root@k8s-master1 prometheus]<span class="comment"># cat prometheus-cfg.yaml</span></span><br><span class="line">---</span><br><span class="line">kind: ConfigMap</span><br><span class="line">apiVersion: v1</span><br><span class="line">metadata:</span><br><span class="line">  labels:</span><br><span class="line">    app: prometheus</span><br><span class="line">  name: prometheus-config</span><br><span class="line">  namespace: monitor-sa</span><br><span class="line">data:</span><br><span class="line">  prometheus.yml: |</span><br><span class="line">    global:</span><br><span class="line">      scrape_interval: 15s</span><br><span class="line">      scrape_timeout: 10s</span><br><span class="line">      evaluation_interval: 1m</span><br><span class="line">    scrape_configs:</span><br><span class="line">    - job_name: <span class="string">&#x27;kubernetes-node&#x27;</span></span><br><span class="line">      kubernetes_sd_configs:</span><br><span class="line">      - role: node</span><br><span class="line">      relabel_configs:</span><br><span class="line">      - source_labels: [__address__]</span><br><span class="line">        regex: <span class="string">&#x27;(.*):10250&#x27;</span></span><br><span class="line">        replacement: <span class="string">&#x27;$&#123;1&#125;:9100&#x27;</span></span><br><span class="line">        target_label: __address__</span><br><span class="line">        action: replace</span><br><span class="line">      - action: labelmap</span><br><span class="line">        regex: __meta_kubernetes_node_label_(.+)</span><br><span class="line">    - job_name: <span class="string">&#x27;kubernetes-node-cadvisor&#x27;</span></span><br><span class="line">      kubernetes_sd_configs:</span><br><span class="line">      - role:  node</span><br><span class="line">      scheme: https</span><br><span class="line">      tls_config:</span><br><span class="line">        ca_file: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt</span><br><span class="line">      bearer_token_file: /var/run/secrets/kubernetes.io/serviceaccount/token</span><br><span class="line">      relabel_configs:</span><br><span class="line">      - action: labelmap</span><br><span class="line">        regex: __meta_kubernetes_node_label_(.+)</span><br><span class="line">      - target_label: __address__</span><br><span class="line">        replacement: kubernetes.default.svc:443</span><br><span class="line">      - source_labels: [__meta_kubernetes_node_name]</span><br><span class="line">        regex: (.+)</span><br><span class="line">        target_label: __metrics_path__</span><br><span class="line">        replacement: /api/v1/nodes/<span class="variable">$&#123;1&#125;</span>/proxy/metrics/cadvisor</span><br><span class="line">    - job_name: <span class="string">&#x27;kubernetes-apiserver&#x27;</span></span><br><span class="line">      kubernetes_sd_configs:</span><br><span class="line">      - role: endpoints</span><br><span class="line">      scheme: https</span><br><span class="line">      tls_config:</span><br><span class="line">        ca_file: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt</span><br><span class="line">      bearer_token_file: /var/run/secrets/kubernetes.io/serviceaccount/token</span><br><span class="line">      relabel_configs:</span><br><span class="line">      - source_labels: [__meta_kubernetes_namespace, __meta_kubernetes_service_name, __meta_kubernetes_endpoint_port_name]</span><br><span class="line">        action: keep</span><br><span class="line">        regex: default;kubernetes;https</span><br><span class="line">    - job_name: <span class="string">&#x27;kubernetes-service-endpoints&#x27;</span></span><br><span class="line">      kubernetes_sd_configs:</span><br><span class="line">      - role: endpoints</span><br><span class="line">      relabel_configs:</span><br><span class="line">      - source_labels: [__meta_kubernetes_service_annotation_prometheus_io_scrape]</span><br><span class="line">        action: keep</span><br><span class="line">        regex: <span class="literal">true</span></span><br><span class="line">      - source_labels: [__meta_kubernetes_service_annotation_prometheus_io_scheme]</span><br><span class="line">        action: replace</span><br><span class="line">        target_label: __scheme__</span><br><span class="line">        regex: (https?)</span><br><span class="line">      - source_labels: [__meta_kubernetes_service_annotation_prometheus_io_path]</span><br><span class="line">        action: replace</span><br><span class="line">        target_label: __metrics_path__</span><br><span class="line">        regex: (.+)</span><br><span class="line">      - source_labels: [__address__, __meta_kubernetes_service_annotation_prometheus_io_port]</span><br><span class="line">        action: replace</span><br><span class="line">        target_label: __address__</span><br><span class="line">        regex: ([^:]+)(?::\d+)?;(\d+)</span><br><span class="line">        replacement: <span class="variable">$1</span>:<span class="variable">$2</span></span><br><span class="line">      - action: labelmap</span><br><span class="line">        regex: __meta_kubernetes_service_label_(.+)</span><br><span class="line">      - source_labels: [__meta_kubernetes_namespace]</span><br><span class="line">        action: replace</span><br><span class="line">        target_label: kubernetes_namespace</span><br><span class="line">      - source_labels: [__meta_kubernetes_service_name]</span><br><span class="line">        action: replace</span><br><span class="line">        target_label: kubernetes_name </span><br><span class="line"></span><br><span class="line">[root@vpc11 prometheus]<span class="comment"># kubectl apply -f prometheus-cfg.yaml</span></span><br><span class="line">configmap/prometheus-config created</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>配置详解</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">kind: ConfigMap</span><br><span class="line">apiVersion: v1</span><br><span class="line">metadata:</span><br><span class="line">  labels:</span><br><span class="line">    app: prometheus</span><br><span class="line">  name: prometheus-config</span><br><span class="line">  namespace: monitor-sa</span><br><span class="line">data:</span><br><span class="line">  prometheus.yml: |</span><br><span class="line">    global:</span><br><span class="line">      scrape_interval: 15s <span class="comment">#采集目标主机监控据的时间间隔</span></span><br><span class="line">      scrape_timeout: 10s	<span class="comment"># 数据采集超时时间，默认10s</span></span><br><span class="line">      evaluation_interval: 1m 	<span class="comment">#触发告警检测的时间，默认是1m</span></span><br><span class="line">    scrape_configs:	<span class="comment"># 配置数据源，称为target，每个target用job_name命名。又分为静态配置和服务发现</span></span><br><span class="line">    - job_name: <span class="string">&#x27;kubernetes-node&#x27;</span></span><br><span class="line">      kubernetes_sd_configs:	<span class="comment"># 使用的是k8s的服务发现</span></span><br><span class="line">      - role: node	<span class="comment"># 使用node角色，它使用默认的kubelet提供的http端口来发现集群中每个node节点</span></span><br><span class="line">      relabel_configs:	<span class="comment"># 重新标记</span></span><br><span class="line">      - source_labels: [__address__]	<span class="comment"># 配置的原始标签，匹配地址</span></span><br><span class="line">        regex: <span class="string">&#x27;(.*):10250&#x27;</span>		<span class="comment">#匹配带有10250端口的url</span></span><br><span class="line">        replacement: <span class="string">&#x27;$&#123;1&#125;:9100&#x27;</span>	<span class="comment">#把匹配到的ip:10250的ip保留</span></span><br><span class="line">        target_label: __address__	<span class="comment">#新生成的url是$&#123;1&#125;获取到的ip:9100</span></span><br><span class="line">        action: replace	<span class="comment"># 动作替换</span></span><br><span class="line">      - action: labelmap</span><br><span class="line">        regex: __meta_kubernetes_node_label_(.+) <span class="comment">#匹配到下面正则表达式的标签会被保留,如果不做regex正则的话，默认只是会显示instance标签</span></span><br><span class="line">    - job_name: <span class="string">&#x27;kubernetes-node-cadvisor&#x27;</span> <span class="comment"># 抓取cAdvisor数据，是获取kubelet上/metrics/cadvisor接口数据来获取容器的资源使用情况</span></span><br><span class="line">      kubernetes_sd_configs:</span><br><span class="line">      - role:  node</span><br><span class="line">      scheme: https</span><br><span class="line">      tls_config:</span><br><span class="line">        ca_file: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt</span><br><span class="line">      bearer_token_file: /var/run/secrets/kubernetes.io/serviceaccount/token</span><br><span class="line">      relabel_configs:</span><br><span class="line">      - action: labelmap	<span class="comment"># 把匹配到的标签保留</span></span><br><span class="line">        regex: __meta_kubernetes_node_label_(.+)  <span class="comment">#保留匹配到的具有__meta_kubernetes_node_label的标签</span></span><br><span class="line">      - target_label: __address__	<span class="comment"># 获取到的地址：__address__=&quot;192.168.40.180:10250&quot;</span></span><br><span class="line">        replacement: kubernetes.default.svc:443	<span class="comment"># 把获取到的地址替换成新的地址kubernetes.default.svc:443</span></span><br><span class="line">      - source_labels: [__meta_kubernetes_node_name]</span><br><span class="line">        regex: (.+)	<span class="comment"># 把原始标签中__meta_kubernetes_node_name值匹配到</span></span><br><span class="line">        target_label: __metrics_path__	<span class="comment">#获取__metrics_path__对应的值</span></span><br><span class="line">        replacement: /api/v1/nodes/<span class="variable">$&#123;1&#125;</span>/proxy/metrics/cadvisor	</span><br><span class="line">        <span class="comment"># 把metrics替换成新的值api/v1/nodes/k8s-master1/proxy/metrics/cadvisor</span></span><br><span class="line">        <span class="comment"># $&#123;1&#125;是__meta_kubernetes_node_name获取到的值</span></span><br><span class="line">        <span class="comment"># 新的url就是https://kubernetes.default.svc:443/api/v1/nodes/k8s-master1/proxy/metrics/cadvisor</span></span><br><span class="line">    - job_name: <span class="string">&#x27;kubernetes-apiserver&#x27;</span></span><br><span class="line">      kubernetes_sd_configs:</span><br><span class="line">      - role: endpoints	<span class="comment"># 使用k8s中的endpoint服务发现，采集apiserver 6443端口获取到的数据</span></span><br><span class="line">      scheme: https</span><br><span class="line">      tls_config:</span><br><span class="line">        ca_file: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt</span><br><span class="line">      bearer_token_file: /var/run/secrets/kubernetes.io/serviceaccount/token</span><br><span class="line">      relabel_configs:</span><br><span class="line">      - source_labels: [__meta_kubernetes_namespace, __meta_kubernetes_service_name, __meta_kubernetes_endpoint_port_name]</span><br><span class="line">        <span class="comment"># endpoint这个对象的名称空间,endpoint对象的服务名,exnpoint的端口名称</span></span><br><span class="line">        action: keep	<span class="comment"># 采集满足条件的实例，其他实例不采集</span></span><br><span class="line">        regex: default;kubernetes;https	<span class="comment">#正则匹配到的默认空间下的service名字是kubernetes，协议是https的endpoint类型保留下来</span></span><br><span class="line">    - job_name: <span class="string">&#x27;kubernetes-service-endpoints&#x27;</span></span><br><span class="line">      kubernetes_sd_configs:</span><br><span class="line">      - role: endpoints</span><br><span class="line">      relabel_configs:</span><br><span class="line">      - source_labels: [__meta_kubernetes_service_annotation_prometheus_io_scrape]</span><br><span class="line">        action: keep</span><br><span class="line">        regex: <span class="literal">true</span></span><br><span class="line">        <span class="comment"># 重新打标仅抓取到的具有 &quot;prometheus.io/scrape: true&quot; 的annotation的端点，意思是说如果某个service具有prometheus.io/scrape = true annotation声明则抓取，annotation本身也是键值结构，所以这里的源标签设置为键，而regex设置值true，当值匹配到regex设定的内容时则执行keep动作也就是保留，其余则丢弃。</span></span><br><span class="line">      - source_labels: [__meta_kubernetes_service_annotation_prometheus_io_scheme]</span><br><span class="line">        action: replace</span><br><span class="line">        target_label: __scheme__</span><br><span class="line">        regex: (https?)</span><br><span class="line">        <span class="comment"># 重新设置scheme，匹配源标签__meta_kubernetes_service_annotation_prometheus_io_scheme也就是prometheus.io/scheme annotation，如果源标签的值匹配到regex，则把值替换为__scheme__对应的值。</span></span><br><span class="line">      - source_labels: [__meta_kubernetes_service_annotation_prometheus_io_path]</span><br><span class="line">        action: replace</span><br><span class="line">        target_label: __metrics_path__</span><br><span class="line">        regex: (.+)</span><br><span class="line">        <span class="comment"># 应用中自定义暴露的指标，也许你暴露的API接口不是/metrics这个路径，那么你可以在这个POD对应的service中做一个&quot;prometheus.io/path = /mymetrics&quot; 声明，上面的意思就是把你声明的这个路径赋值给__metrics_path__，其实就是让prometheus来获取自定义应用暴露的metrices的具体路径，不过这里写的要和service中做好约定，如果service中这样写 prometheus.io/app-metrics-path: &#x27;/metrics&#x27; 那么你这里就要__meta_kubernetes_service_annotation_prometheus_io_app_metrics_path这样写。</span></span><br><span class="line">      - source_labels: [__address__, __meta_kubernetes_service_annotation_prometheus_io_port]</span><br><span class="line">        action: replace</span><br><span class="line">        target_label: __address__</span><br><span class="line">        regex: ([^:]+)(?::\d+)?;(\d+)</span><br><span class="line">        replacement: <span class="variable">$1</span>:<span class="variable">$2</span></span><br><span class="line">        <span class="comment"># 暴露自定义的应用的端口，就是把地址和你在service中定义的 &quot;prometheus.io/port = &lt;port&gt;&quot; 声明做一个拼接，然后赋值给__address__，这样prometheus就能获取自定义应用的端口，然后通过这个端口再结合__metrics_path__来获取指标，如果__metrics_path__值不是默认的/metrics那么就要使用上面的标签替换来获取真正暴露的具体路径。</span></span><br><span class="line">      - action: labelmap	<span class="comment">#保留下面匹配到的标签</span></span><br><span class="line">        regex: __meta_kubernetes_service_label_(.+)</span><br><span class="line">      - source_labels: [__meta_kubernetes_namespace]</span><br><span class="line">        action: replace	 <span class="comment"># 替换__meta_kubernetes_namespace变成kubernetes_namespace</span></span><br><span class="line">        target_label: kubernetes_namespace</span><br><span class="line">      - source_labels: [__meta_kubernetes_service_name]</span><br><span class="line">        action: replace</span><br><span class="line">        target_label: kubernetes_name </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="4）通过deployment部署prometheus-注意调度到vpc12上，因为数据存储目录建到vpc12上了"><strong>4）通过deployment部署prometheus</strong>(注意调度到vpc12上，因为数据存储目录建到vpc12上了)</h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">[root@vpc11 prometheus]<span class="comment"># cat prometheus-deploy.yaml </span></span><br><span class="line">---</span><br><span class="line">apiVersion: apps/v1</span><br><span class="line">kind: Deployment</span><br><span class="line">metadata:</span><br><span class="line">  name: prometheus-server</span><br><span class="line">  namespace: monitor-sa</span><br><span class="line">  labels:</span><br><span class="line">    app: prometheus</span><br><span class="line">spec:</span><br><span class="line">  replicas: 1</span><br><span class="line">  selector:</span><br><span class="line">    matchLabels:</span><br><span class="line">      app: prometheus</span><br><span class="line">      component: server</span><br><span class="line">    <span class="comment">#matchExpressions:</span></span><br><span class="line">    <span class="comment">#- &#123;key: app, operator: In, values: [prometheus]&#125;</span></span><br><span class="line">    <span class="comment">#- &#123;key: component, operator: In, values: [server]&#125;</span></span><br><span class="line">  template:</span><br><span class="line">    metadata:</span><br><span class="line">      labels:</span><br><span class="line">        app: prometheus</span><br><span class="line">        component: server</span><br><span class="line">      annotations:</span><br><span class="line">        prometheus.io/scrape: <span class="string">&#x27;false&#x27;</span></span><br><span class="line">    spec:</span><br><span class="line">      nodeName: vpc12	<span class="comment"># 指定pod调度到哪个节点上	</span></span><br><span class="line">      serviceAccountName: monitor</span><br><span class="line">      containers:</span><br><span class="line">      - name: prometheus</span><br><span class="line">        image: prom/prometheus:v2.2.1</span><br><span class="line">        imagePullPolicy: IfNotPresent</span><br><span class="line">        <span class="built_in">command</span>:</span><br><span class="line">          - prometheus</span><br><span class="line">          - --config.file=/etc/prometheus/prometheus.yml</span><br><span class="line">          - --storage.tsdb.path=/prometheus	<span class="comment"># 数据存储目录</span></span><br><span class="line">          - --storage.tsdb.retention=720h	<span class="comment"># 数据保存时长</span></span><br><span class="line">          - --web.enable-lifecycle	<span class="comment"># 开启热加载</span></span><br><span class="line">        ports:</span><br><span class="line">        - containerPort: 9090</span><br><span class="line">          protocol: TCP</span><br><span class="line">        volumeMounts:</span><br><span class="line">        - mountPath: /etc/prometheus/prometheus.yml</span><br><span class="line">          name: prometheus-config</span><br><span class="line">          subPath: prometheus.yml</span><br><span class="line">        - mountPath: /prometheus/</span><br><span class="line">          name: prometheus-storage-volume</span><br><span class="line">      volumes:</span><br><span class="line">        - name: prometheus-config</span><br><span class="line">          configMap:</span><br><span class="line">            name: prometheus-config</span><br><span class="line">            items:</span><br><span class="line">              - key: prometheus.yml</span><br><span class="line">                path: prometheus.yml</span><br><span class="line">                mode: 0644</span><br><span class="line">        - name: prometheus-storage-volume</span><br><span class="line">          hostPath:</span><br><span class="line">           path: /prodata  <span class="comment">#数据存储的路径</span></span><br><span class="line">           <span class="built_in">type</span>: Directory</span><br><span class="line"></span><br><span class="line">[root@vpc11 prometheus]<span class="comment"># kubectl apply -f prometheus-deploy.yaml</span></span><br><span class="line">deployment.apps/prometheus-server created</span><br><span class="line">[root@vpc11 prometheus]<span class="comment"># kubectl get pods -o wide -n monitor-sa | grep prometheus</span></span><br><span class="line">prometheus-server-69c65cb644-zwdbr    1/1     Running   0          64m    10.244.5.156     vpc12   &lt;none&gt;           &lt;none&gt;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="5）给prometheus-pod创建一个service"><strong>5）给prometheus pod创建一个service</strong></h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">[root@vpc11 prometheus]<span class="comment"># cat prometheus-svc.yaml </span></span><br><span class="line">apiVersion: v1</span><br><span class="line">kind: Service</span><br><span class="line">metadata:</span><br><span class="line">  name: prometheus</span><br><span class="line">  namespace: monitor-sa</span><br><span class="line">  labels:</span><br><span class="line">    app: prometheus</span><br><span class="line">spec:</span><br><span class="line">  <span class="built_in">type</span>: NodePort</span><br><span class="line">  ports:</span><br><span class="line">    - port: 9090</span><br><span class="line">      targetPort: 9090</span><br><span class="line">      protocol: TCP</span><br><span class="line">  selector:</span><br><span class="line">    app: prometheus</span><br><span class="line">    component: server</span><br><span class="line">    </span><br><span class="line">[root@vpc11 prometheus]<span class="comment"># kubectl apply -f prometheus-svc.yaml</span></span><br><span class="line">service/prometheus created</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看service在物理机映射的端口</span></span><br><span class="line">[root@vpc11 prometheus]<span class="comment"># kubectl get svc -n monitor-sa </span></span><br><span class="line">NAME                 TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE</span><br><span class="line">prometheus           NodePort    10.106.22.191    &lt;none&gt;        9090:30955/TCP   2d2h</span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过上面可以看到service在宿主机上映射的端口是32367，这样我们访问k8s集群的master1节点的ip:30955，就可以访问到prometheus的web ui界面了</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/bobaipeng/image/typora/image-20220409152221436.png" alt="image-20220409152221436"></p>
+<p>点击页面的<code>Status-&gt;Targets</code>，可看到如下,说明我们配置的服务发现可以正常采集数据</p>
+<p><img src="https://cdn.jsdelivr.net/gh/bobaipeng/image/typora/image-20220409152626166.png" alt="image-20220409152626166"></p>
+<h1>五 Grafana的安装和配置版本 8.4.5</h1>
+<h2 id="5-1-直接使用yum安装">5.1 直接使用yum安装</h2>
+<h3 id="5-1-1-安装">5.1.1 安装</h3>
+<p>到官网下载RPM包</p>
+<p><a target="_blank" rel="noopener" href="https://grafana.com/grafana/download/8.4.5">https://grafana.com/grafana/download/8.4.5</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">wget https://dl.grafana.com/enterprise/release/grafana-enterprise-8.4.5-1.x86_64.rpm</span><br><span class="line"></span><br><span class="line"><span class="comment">#安装</span></span><br><span class="line">yum localinstall -y grafana-enterprise-8.4.5-1.x86_64.rpm</span><br><span class="line"></span><br><span class="line"><span class="comment">#启动服务</span></span><br><span class="line">systemctl start grafana-server.service</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="5-1-2-登陆">5.1.2 登陆</h3>
+<p>登录 grafana访问测试,默认端口是3000，正常打开 默认用户名密码 admin/admin</p>
+<p>登录进去添加prometheus数据库</p>
+<p><img src="https://cdn.jsdelivr.net/gh/bobaipeng/image/typora/image-20220409153743440.png" alt="image-20220409153743440"></p>
+<h3 id="5-1-2-添加dashboard-Node-Exporter-Full-1860-kubenete所有节点、单节点CPU-内存网络IO监控-10000-315">5.1.2 添加dashboard :Node Exporter Full(1860) \kubenete所有节点、单节点CPU\内存网络IO监控  (10000  315 )</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/bobaipeng/image/typora/image-20220409153917592.png" alt="image-20220409153917592"></p>
+<h1>六  k8s部署kube-state-metrics组件</h1>
+<p>参考 <a target="_blank" rel="noopener" href="https://www.cnblogs.com/hujinzhong/p/15000626.html">https://www.cnblogs.com/hujinzhong/p/15000626.html</a></p>
+<h2 id="6-1、部署kube-state-metrics组件">6.1、部署kube-state-metrics组件</h2>
+<h3 id="6-1-1、kube-state-metrics是什么">6.1.1、kube-state-metrics是什么</h3>
+<p><code>kube-state-metrics</code>通过监听API Server生成有关资源对象的状态指标，比如Deployment、Node、Pod，需要注意的是kube-state-metrics只是简单的提供一个metrics数据，并不会存储这些指标数据，所以我们可以使用Prometheus来抓取这些数据然后存储，主要关注的是业务相关的一些元数据，比如Deployment、Pod、副本状态等；调度了多少个replicas？现在可用的有几个？多少个Pod是running/stopped/terminated状态？Pod重启了多少次？我有多少job在运行中。</p>
+<h3 id="6-1-2、安装kube-state-metrics组件">6.1.2、安装kube-state-metrics组件</h3>
+<p><strong>1）创建sa，并对sa授权</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">[root@vpc11 prometheus]<span class="comment"># cat kube-state-metrics-rbac.yaml</span></span><br><span class="line">---</span><br><span class="line">apiVersion: v1</span><br><span class="line">kind: ServiceAccount</span><br><span class="line">metadata:</span><br><span class="line">  name: kube-state-metrics</span><br><span class="line">  namespace: monitor-sa</span><br><span class="line">---</span><br><span class="line">apiVersion: rbac.authorization.k8s.io/v1</span><br><span class="line">kind: ClusterRole</span><br><span class="line">metadata:</span><br><span class="line">  name: kube-state-metrics</span><br><span class="line">rules:</span><br><span class="line">- apiGroups: [<span class="string">&quot;&quot;</span>]</span><br><span class="line">  resources: [<span class="string">&quot;nodes&quot;</span>, <span class="string">&quot;pods&quot;</span>, <span class="string">&quot;services&quot;</span>, <span class="string">&quot;resourcequotas&quot;</span>, <span class="string">&quot;replicationcontrollers&quot;</span>, <span class="string">&quot;limitranges&quot;</span>, <span class="string">&quot;persistentvolumeclaims&quot;</span>, <span class="string">&quot;persistentvolumes&quot;</span>, <span class="string">&quot;namespaces&quot;</span>, <span class="string">&quot;endpoints&quot;</span>]</span><br><span class="line">  verbs: [<span class="string">&quot;list&quot;</span>, <span class="string">&quot;watch&quot;</span>]</span><br><span class="line">- apiGroups: [<span class="string">&quot;extensions&quot;</span>]</span><br><span class="line">  resources: [<span class="string">&quot;daemonsets&quot;</span>, <span class="string">&quot;deployments&quot;</span>, <span class="string">&quot;replicasets&quot;</span>]</span><br><span class="line">  verbs: [<span class="string">&quot;list&quot;</span>, <span class="string">&quot;watch&quot;</span>]</span><br><span class="line">- apiGroups: [<span class="string">&quot;apps&quot;</span>]</span><br><span class="line">  resources: [<span class="string">&quot;statefulsets&quot;</span>]</span><br><span class="line">  verbs: [<span class="string">&quot;list&quot;</span>, <span class="string">&quot;watch&quot;</span>]</span><br><span class="line">- apiGroups: [<span class="string">&quot;batch&quot;</span>]</span><br><span class="line">  resources: [<span class="string">&quot;cronjobs&quot;</span>, <span class="string">&quot;jobs&quot;</span>]</span><br><span class="line">  verbs: [<span class="string">&quot;list&quot;</span>, <span class="string">&quot;watch&quot;</span>]</span><br><span class="line">- apiGroups: [<span class="string">&quot;autoscaling&quot;</span>]</span><br><span class="line">  resources: [<span class="string">&quot;horizontalpodautoscalers&quot;</span>]</span><br><span class="line">  verbs: [<span class="string">&quot;list&quot;</span>, <span class="string">&quot;watch&quot;</span>]</span><br><span class="line">---</span><br><span class="line">apiVersion: rbac.authorization.k8s.io/v1</span><br><span class="line">kind: ClusterRoleBinding</span><br><span class="line">metadata:</span><br><span class="line">  name: kube-state-metrics</span><br><span class="line">roleRef:</span><br><span class="line">  apiGroup: rbac.authorization.k8s.io</span><br><span class="line">  kind: ClusterRole</span><br><span class="line">  name: kube-state-metrics</span><br><span class="line">subjects:</span><br><span class="line">- kind: ServiceAccount</span><br><span class="line">  name: kube-state-metrics</span><br><span class="line">  namespace: monitor-sa</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line">[root@vpc11 prometheus]<span class="comment"># kubectl apply -f kube-state-metrics-rbac.yaml</span></span><br><span class="line">serviceaccount/kube-state-metrics created</span><br><span class="line">clusterrole.rbac.authorization.k8s.io/kube-state-metrics created</span><br><span class="line">clusterrolebinding.rbac.authorization.k8s.io/kube-state-metrics created</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>2）安装kube-state-metrics组件</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">[root@vpc11 prometheus]<span class="comment"># cat kube-state-metrics-deploy.yaml </span></span><br><span class="line">apiVersion: apps/v1</span><br><span class="line">kind: Deployment</span><br><span class="line">metadata:</span><br><span class="line">  name: kube-state-metrics</span><br><span class="line">  namespace: monitor-sa</span><br><span class="line">spec:</span><br><span class="line">  replicas: 1</span><br><span class="line">  selector:</span><br><span class="line">    matchLabels:</span><br><span class="line">      app: kube-state-metrics</span><br><span class="line">  template:</span><br><span class="line">    metadata:</span><br><span class="line">      labels:</span><br><span class="line">        app: kube-state-metrics</span><br><span class="line">    spec:</span><br><span class="line">      serviceAccountName: kube-state-metrics</span><br><span class="line">      containers:</span><br><span class="line">      - name: kube-state-metrics</span><br><span class="line">        image: kubesphere/kube-state-metrics:v2.3.0</span><br><span class="line">        ports: </span><br><span class="line">        - containerPort: 8080</span><br><span class="line"></span><br><span class="line">[root@vpc11 prometheus]<span class="comment"># kubectl apply -f kube-state-metrics-svc.yaml</span></span><br><span class="line">service/kube-state-metrics created</span><br><span class="line"></span><br><span class="line">[root@vpc11 prometheus]<span class="comment"># kubectl get svc -n monitor-sa</span></span><br><span class="line">NAME                 TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE</span><br><span class="line">kube-state-metrics   ClusterIP   10.111.144.193   &lt;none&gt;        8080/TCP         44h</span><br><span class="line">prometheus           NodePort    10.106.22.191    &lt;none&gt;        9090:30955/TCP   2d2h</span><br></pre></td></tr></table></figure>
+<h2 id="6-2-导入kubernetes-pods-dasnboard">6.2 导入kubernetes pods  dasnboard</h2>
+<p><code>https://cdn.jsdelivr.net/gh/bobaipeng/image/typora/Kubernetes Pods-1649491128007.json</code></p>
+<p>注意变量设置：namespace pod container</p>
+<p><img src="https://cdn.jsdelivr.net/gh/bobaipeng/image/typora/image-20220409160951117.png" alt="image-20220409160951117"></p>
+<p>namespace: label_values(kube_pod_info, namespace)</p>
+<p><img src="https://cdn.jsdelivr.net/gh/bobaipeng/image/typora/image-20220409161036971.png" alt="image-20220409161036971"></p>
+<p>pod: label_values(kube_pod_info{namespace=~“$namespace”}, pod)</p>
+<p><img src="https://cdn.jsdelivr.net/gh/bobaipeng/image/typora/image-20220409161144517.png" alt="image-20220409161144517"></p>
+<p>container:  <code>label_values(kube_pod_container_info&#123;namespace=&quot;$namespace&quot;, pod=&quot;$pod&quot;&#125;, container)</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/bobaipeng/image/typora/image-20220409161344978.png" alt="image-20220409161344978"></p>
+<h1>七 kafka-exporter安装</h1>
+<h2 id="7-1-安装">7.1 安装</h2>
+<p>现对kafka进行数据采集和监控</p>
+<p>kafka_exporter地址：<a target="_blank" rel="noopener" href="https://github.com/danielqsj/kafka_exporter">https://github.com/danielqsj/kafka_exporter</a></p>
+<p>安装kafka_exporter</p>
+<p>kafka-exporter.yaml</p>
+<p>此处注意点: <strong>image: danielqsj/kafka-exporter:v1.4.2</strong></p>
+<p>​                      <strong>args: [“–kafka.server=kafka-external.default.svc.cluster.local:9092”,“–sasl.mechanism=plain”,“–sasl.username=admin”,“–sasl.password=admin”,“–sasl.enabled”]</strong>   #此配置只适用于 plain方式连接的 ，不同的的连接方式是不一样的具体配置需要到官网查看</p>
+<p>此处的server 主机和端口，kafka服务所在的namespace里查，此处kafka.server=kafka-external.default.svc.cluster.local和kafka.server=kafka.default.svc.cluster.local都行</p>
+<p><img src="https://cdn.jsdelivr.net/gh/bobaipeng/image/typora/image-20220409162545414.png" alt="image-20220409162545414"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">[root@vpc11 prometheus]<span class="comment"># cat kafka-exporter.yaml </span></span><br><span class="line">apiVersion: v1</span><br><span class="line">kind: Service</span><br><span class="line">metadata:</span><br><span class="line">  name: kafka-exporter</span><br><span class="line">  namespace: monitor-sa</span><br><span class="line">  labels:</span><br><span class="line">    app: kafka-exporter</span><br><span class="line">spec:</span><br><span class="line">  selector:</span><br><span class="line">    app: kafka-exporter</span><br><span class="line">  ports:</span><br><span class="line">  - name: kafka-exporter</span><br><span class="line">    port: 9308</span><br><span class="line">    protocol: TCP</span><br><span class="line">  <span class="built_in">type</span>: ClusterIP</span><br><span class="line">---</span><br><span class="line">apiVersion: apps/v1</span><br><span class="line">kind: Deployment</span><br><span class="line">metadata:</span><br><span class="line">  name: kafka-exporter</span><br><span class="line">  namespace: monitor-sa</span><br><span class="line">  labels:</span><br><span class="line">    app: kafka-exporter</span><br><span class="line">spec:</span><br><span class="line">  replicas: 1</span><br><span class="line">  selector:</span><br><span class="line">    matchLabels:</span><br><span class="line">      app: kafka-exporter</span><br><span class="line">  template:</span><br><span class="line">    metadata:</span><br><span class="line">      labels:</span><br><span class="line">        app: kafka-exporter</span><br><span class="line">    spec:</span><br><span class="line">      containers:</span><br><span class="line">      - name: kafka-exporter</span><br><span class="line">        image: danielqsj/kafka-exporter:v1.4.2</span><br><span class="line">        imagePullPolicy: IfNotPresent</span><br><span class="line">        args: [<span class="string">&quot;--kafka.server=kafka-external.default.svc.cluster.local:9092&quot;</span>,<span class="string">&quot;--sasl.mechanism=plain&quot;</span>,<span class="string">&quot;--sasl.username=admin&quot;</span>,<span class="string">&quot;--sasl.password=admin&quot;</span>,<span class="string">&quot;--sasl.enabled&quot;</span>]</span><br><span class="line">        resources:</span><br><span class="line">          requests:</span><br><span class="line">            memory: 100M</span><br><span class="line">        volumeMounts:</span><br><span class="line">        - name: tz-config</span><br><span class="line">          mountPath: /etc/localtime</span><br><span class="line">          readOnly: <span class="literal">true</span></span><br><span class="line">      volumes:</span><br><span class="line">        - name: tz-config</span><br><span class="line">          hostPath:</span><br><span class="line">            path: /usr/share/zoneinfo/Asia/Shanghai</span><br><span class="line">            </span><br><span class="line">[root@vpc11 prometheus]<span class="comment"># kubectl get svc,pod -n monitor-sa</span></span><br><span class="line">NAME                         TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE</span><br><span class="line">service/kafka-exporter       ClusterIP   10.97.218.76     &lt;none&gt;        9308/TCP         15h</span><br><span class="line">service/kube-state-metrics   ClusterIP   10.111.144.193   &lt;none&gt;        8080/TCP         45h</span><br><span class="line">service/prometheus           NodePort    10.106.22.191    &lt;none&gt;        9090:30955/TCP   2d3h</span><br><span class="line"></span><br><span class="line">NAME                                      READY   STATUS    RESTARTS   AGE</span><br><span class="line">pod/kafka-exporter-7745759f99-dkdvg       1/1     Running   0          15h</span><br><span class="line">pod/kube-state-metrics-6fdcd49d47-7cw7w   1/1     Running   0          45h</span><br><span class="line">pod/node-exporter-2khn4                   1/1     Running   0          2d3h</span><br><span class="line">pod/prometheus-server-69c65cb644-zwdbr    1/1     Running   0          3h26m</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>测试：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@vpc11 prometheus]<span class="comment"># curl 10.97.218.76:9308/metrics  | grep SenseyeXRawEvent</span></span><br><span class="line">kafka_topic_partition_leader&#123;partition=<span class="string">&quot;7&quot;</span>,topic=<span class="string">&quot;SenseyeXRawEvent&quot;</span>&#125; 99</span><br><span class="line">kafka_topic_partition_leader&#123;partition=<span class="string">&quot;70&quot;</span>,topic=<span class="string">&quot;SenseyeXRawEvent&quot;</span>&#125; 99</span><br><span class="line">kafka_topic_partition_leader&#123;partition=<span class="string">&quot;71&quot;</span>,topic=<span class="string">&quot;SenseyeXRawEvent&quot;</span>&#125; 103</span><br><span class="line">kafka_topic_partition_leader&#123;partition=<span class="string">&quot;72&quot;</span>,topic=<span class="string">&quot;SenseyeXRawEvent&quot;</span>&#125; 107</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="7-2-关联到prometheus">7.2 关联到prometheus</h2>
+<p>此处有很多方式，如修改prometheus配置文件增加静态采集目标，采用ServiceMonitor等，此处修改config文件</p>
+<p>修改prometheus-cfg.yaml文件在最后加上：</p>
+<p>此处的targets获取从 monitor-sa的kafka-expoter service中获取</p>
+<p><img src="https://cdn.jsdelivr.net/gh/bobaipeng/image/typora/image-20220409172139678.png" alt="image-20220409172139678"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- job_name: <span class="string">&#x27;kafka-exporter&#x27;</span></span><br><span class="line">  static_configs:</span><br><span class="line">   - targets: [<span class="string">&#x27;kafka-exporter.monitor-sa.svc.cluster.local:9308&#x27;</span>]</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/bobaipeng/image/typora/image-20220409172010278.png" alt="image-20220409172010278"></p>
+<p>添加完之后更新文件 删除pod等待pod重启</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">[root@vpc11 prometheus]<span class="comment"># kubectl apply -f prometheus-cfg.yaml</span></span><br><span class="line">[root@vpc11 prometheus]<span class="comment"># kubectl get pods -n monitor-sa</span></span><br><span class="line">NAME                                  READY   STATUS    RESTARTS   AGE</span><br><span class="line">kafka-exporter-7745759f99-dkdvg       1/1     Running   0          16h</span><br><span class="line">kube-state-metrics-6fdcd49d47-7cw7w   1/1     Running   0          46h</span><br><span class="line">node-exporter-2khn4                   1/1     Running   0          2d5h</span><br><span class="line">node-exporter-92rwk                   1/1     Running   0          2d6h</span><br><span class="line">node-exporter-dfpdq                   1/1     Running   0          2d5h</span><br><span class="line">node-exporter-jpl5t                   1/1     Running   0          2d4h</span><br><span class="line">node-exporter-m7rbm                   1/1     Running   0          2d5h</span><br><span class="line">node-exporter-rvb72                   1/1     Running   0          2d4h</span><br><span class="line">node-exporter-sc4h8                   1/1     Running   0          2d4h</span><br><span class="line">node-exporter-smppn                   1/1     Running   0          2d4h</span><br><span class="line">node-exporter-t4zr2                   1/1     Running   0          2d5h</span><br><span class="line">node-exporter-t928p                   1/1     Running   0          2d4h</span><br><span class="line">node-exporter-t997j                   1/1     Running   0          2d5h</span><br><span class="line">node-exporter-tz8nc                   1/1     Running   0          2d6h</span><br><span class="line">prometheus-server-69c65cb644-zwdbr    1/1     Running   0          4h35m</span><br><span class="line"></span><br><span class="line">[root@vpc11 prometheus]<span class="comment"># kubectl delete pod prometheus-server-69c65cb644-zwdbr -n monitor-sa</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>测试：打开premetheus ui 页面在status-&gt;targets中就能看到了</p>
+<p><img src="https://cdn.jsdelivr.net/gh/bobaipeng/image/typora/image-20220409173226560.png" alt="image-20220409173226560"></p>
+<h2 id="7-3-grafna中导入dashboard-（-7589）">7.3  grafna中导入dashboard  （ 7589）</h2>
+<p><img src="https://cdn.jsdelivr.net/gh/bobaipeng/image/typora/image-20220409173403214.png" alt="image-20220409173403214"></p>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/cn/docker-常见问题/" data-toggle="tooltip" data-placement="top" title="Docker 常见问题">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/cn/Python-内置类属性__name__/" data-toggle="tooltip" data-placement="top" title="Python-内置类属性__name__">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      如果您喜欢此博客或发现它对您有用，则欢迎对此发表评论。 也欢迎您共享此博客，以便更多人可以参与。 如果博客中使用的图像侵犯了您的版权，请与作者联系以将其删除。 谢谢 ！
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=k8s集群搭建监控grafana和prometheus&body=Hi,I found this website and thought you might like it https://bobaipeng.gitee.io/cn/k8s集群搭建监控记录/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+    <script src="/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '60916e81c7d47074d6b5',
+      clientSecret: 'fc630e18ead0305bc180b86d6b5976e51ef69611',
+      repo: 'boblogcomments',
+      owner: 'bobaipeng',
+      admin: 'bobaipeng',
+      id: 'Sat Apr 09 2022 18:07:53 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: true,
+      language: 'zh-CN',
+      proxy: 'https://misty-tooth-5aea.524027223.workers.dev/?https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#k8s" title="k8s">k8s</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>链友</h5>
+        <ul class="list-inline">
+
+          
+          <li>
+            <a href="https://v-vincen.life/" target="_blank">V_Vincen</a>
+          </li>
+          
+          <li>
+            <a href="http://beantech.org" target="_blank">Bean Tech</a>
+          </li>
+          
+          <li>
+            <a href="http://huangxuan.me" target="_blank">Hux Blog</a>
+          </li>
+          
+          <li>
+            <a href="https://hexo.io/" target="_blank">Hexo</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+            <li>
+              <a target="_blank" href="https://github.com/bobaipeng">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          Bob
+          2022
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="/js/hux-blog.min.js"></script>
+  <!-- catalog -->
+  <script async="true" type="text/javascript" src="/js/catalog.js"></script>
+  <!-- totop(rocket) -->
+  <script async="true" type="text/javascript" src="/js/totop.js"></script>
+
+  
+    <!-- Busuanzi JavaScript -->
+    <script async="async" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+    <!-- LangSelect start -->
+    <script type="text/javascript" src="/js/langselect.js"></script>
+    <!-- LangSelect end -->
+  
+
+  
+    <!-- Mouseclick -->
+    <script type="text/javascript" src="/js/mouseclick.js" content='The first step is as good as half over...,Laugh and grow fat...,Man proposes God disposes...,When all else is lost the future still remains...,Wasting time is robbing oneself...,Sharp tools make good work...,Cease to struggle and you cease to live...,A friend in need is a friend indeed...,Faith can move mountains...' color='#9933CC,#339933,#66CCCC,#FF99CC,#CCCCFF,#6666CC,#663399,#66CC99,#FF0033'></script>
+  
+
+  
+    <!-- ribbon -->
+    <script type="text/javascript" src="/js/ribbonDynamic.js"></script>
+  
+
+  
+
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script async="async" type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script async="async" type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("https://bobaipeng.gitee.io/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="搜索..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+    <script src="/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
